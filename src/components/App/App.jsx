@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { nanoid } from 'nanoid'
-import { ContactForm, ContactList, Filter } from '../components'
+import { ContactForm, ContactList, Filter } from '../../components'
+import { Box, MainTitle, SectionTitle } from './App.styled';
 
 export default class App extends Component {
 
@@ -77,18 +78,18 @@ export default class App extends Component {
 
     return (
       <>
-        <section>
-          <h1>Phonebook</h1>
+        <Box>
+          <MainTitle>Phonebook</MainTitle>
           <ContactForm addContact={addContact}/>
-        </section>
+        </Box>
     
-        <section>
-            <h2>Contacts</h2>
+        <Box>
+            <SectionTitle>Contacts</SectionTitle>
             <Filter filter={filter} handleChange={handleChange}/>
             {contacts.length
               ? <ContactList contacts={contacts} deleteContact={deleteContact}/>
               : null}
-        </section>
+        </Box>
       </>
     );
   }

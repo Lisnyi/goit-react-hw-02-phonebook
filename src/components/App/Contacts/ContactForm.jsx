@@ -1,7 +1,9 @@
 import { nanoid } from 'nanoid'
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import * as yup from 'yup';
 import PropTypes from 'prop-types'
+import { Button } from '../App.styled';
+import { NewContactForm, Input, Label, Error } from './ContactForm.styled';
 
 export const ContactForm = ({addContact}) => {
 
@@ -27,23 +29,23 @@ export const ContactForm = ({addContact}) => {
         resetForm()
     }
         return  <Formik initialValues={initialValues} validationSchema={schema} onSubmit={handleSubmit}>
-                    <Form autoComplete='on'>
-                        <label htmlFor={nameId}>Name</label>
-                        <Field
+                    <NewContactForm autoComplete='on'>
+                        <Label htmlFor={nameId}>Name</Label>
+                        <Input
                             type="text"
                             name="name"
                             id={nameId}
                         />
-                        <ErrorMessage name="name"/>
-                        <label htmlFor={numberId}>Number</label>
-                        <Field
+                        <Error name="name"/>
+                        <Label htmlFor={numberId}>Number</Label>
+                        <Input
                             type="tel"
                             name="number"
                             id={numberId}  
                         />
-                        <ErrorMessage name="number" />
-                        <button type='submit'>Add contact</button>
-                    </Form>
+                        <Error name="number" />
+                        <Button type='submit'>Add contact</Button>
+                    </NewContactForm>
                 </Formik>
     }
 

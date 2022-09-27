@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types'
+import { Button } from 'components/App/App.styled'
 
 export const ContactList = ({contacts, deleteContact}) => {
     
     const markup = contacts.map(({id, name, number}) => (
         <li key={id}>
             {name}: {number}
-            <button onClick={() => deleteContact(id)}>delete</button>
+            <Button onClick={() => deleteContact(id)}>Delete</Button>
         </li>
     ))
 

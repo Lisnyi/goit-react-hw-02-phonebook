@@ -1,3 +1,3 @@
-export * from "./Contacts/ContactForm"
-export * from "./Phonebook/ContactList/ContactList"
-export * from "./Phonebook/Filter/Filter"
+export * from "./App/Contacts/ContactForm"
+export * from "./App/Phonebook/ContactList/ContactList"
+export * from "./App/Phonebook/Filter/Filter"
