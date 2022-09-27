@@ -20,6 +20,8 @@ export const Button = styled.button`
     background-color: white;
     border: 1px solid grey;
     border-radius: 3px;
+    max-width: 100px;
+    padding: 3px;
 
     &:hover, &:focus {
         background-color: blue;

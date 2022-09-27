@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import { Button } from '../App.styled';
 import { NewContactForm, Input, Label, Error } from './ContactForm.styled';
 
-export const ContactForm = ({addContact}) => {
+export const ContactForm = ({props, addContact}) => {
 
     const initialValues = {
         name: '',
@@ -28,22 +28,25 @@ export const ContactForm = ({addContact}) => {
         addContact(name, number)
         resetForm()
     }
+    
         return  <Formik initialValues={initialValues} validationSchema={schema} onSubmit={handleSubmit}>
-                    <NewContactForm autoComplete='on'>
+                    <NewContactForm autoComplete='off'>
                         <Label htmlFor={nameId}>Name</Label>
                         <Input
                             type="text"
                             name="name"
                             id={nameId}
+                            placeholder="Name"
                         />
-                        <Error name="name"/>
+                        <Error name="name" component="span"/>
                         <Label htmlFor={numberId}>Number</Label>
                         <Input
                             type="tel"
                             name="number"
-                            id={numberId}  
+                            id={numberId}
+                            placeholder="+380-546"
                         />
-                        <Error name="number" />
+                        <Error name="number" component="span"/>
                         <Button type='submit'>Add contact</Button>
                     </NewContactForm>
                 </Formik>
