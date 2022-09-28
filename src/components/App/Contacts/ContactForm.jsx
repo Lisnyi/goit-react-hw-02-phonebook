@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import { Button } from '../App.styled';
 import { NewContactForm, Input, Label, Error } from './ContactForm.styled';
 
-export const ContactForm = ({props, addContact}) => {
+export const ContactForm = ({addContact}) => {
 
     const initialValues = {
         name: '',
